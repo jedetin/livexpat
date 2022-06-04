@@ -1,0 +1,118 @@
+<!DOCTYPE html class="h-100">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivExpat</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-lg bg-dark text-white">
+            <div class="container-fluid">
+                <center>
+                    <a class="h1 navbar-brand" href="#">LivExpat</a>
+                </center>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+            <h2 class="text-center">Calculate Expenses for World</h2>
+            <hr>
+            <center>
+                <div class="card" style="width: 20rem;">
+                    <div class="card-header">
+                        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa fa-coins"></i> Update Ex-rate
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Enter price in AED to know worths in INR</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                        <label for="exampleInputPassword1" class="form-label"><i class="fa fa-money-bill"></i> Cost</label>
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">AED</span>
+                            </div>
+                            <input type="text" class="form-control" id="cost" placeholder="1.00">
+
+                        </div>
+                        <label for="exampleInputPassword1" class="form-label"><i class="fa fa-cash-register"></i> Exchange</label>
+
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">INR</span>
+                            </div>
+                            <input type="text" class="form-control" id="exr" placeholder="22.00">
+
+                        </div>
+                        <label for="exampleInputPassword1" class="form-label"><i class="fa fa-dumbbell"></i> Purchase Power</label>
+
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">INR</span>
+                            </div>
+                            <input type="text" class="form-control" id="ppp" placeholder="10.00">
+
+                        </div>
+
+                        <button onclick="calcCurr()" class="btn btn-secondary">Convert</button>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </section>
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Manually enter exchange rate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="exampleInputPassword1" class="form-label">Currency Exchange in ₹</label>
+                    Current Exchange: <span id="upex"></span>
+                    <div class="input-group mb-3">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">₹</span>
+                        </div>
+
+                        <input type="text" class="form-control" id="upexrate" placeholder="1.00">
+
+                    </div>
+                    *<small class="text-muted" id="datetime"></small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button onclick="updateRate()" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">LivExpat &mdash; an Expense and Living Calculator for World</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/exrate.js"></script>
+</body>
+
+</html>
